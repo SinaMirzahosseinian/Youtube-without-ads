@@ -12,10 +12,10 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <input
           type="text"
-          placeholder="what you are looking for?"
+          placeholder="What are you looking for?"
           onChange={event => this.handleInputChange(event)}
           value={this.state.term}
         />
