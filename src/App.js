@@ -3,6 +3,7 @@ import SearchBar from "./component/search_bar";
 import YTsearch from "youtube-api-search";
 import VideoList from "./component/video_list_list";
 import Test from "./component/test";
+import VideoDetail from "./component/video-detail";
 
 const API_KEY = "AIzaSyAnPMlXfqjcbrcOiQ2dyQVTMuYL_hn5gCU";
 
@@ -20,6 +21,7 @@ class App extends Component {
       <Fragment>
         <Test />
         <SearchBar />
+        <VideoDetail video={this.state.videos[0]} />
         <VideoList videos={this.state.videos} />
       </Fragment>
     );
