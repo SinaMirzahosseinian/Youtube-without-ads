@@ -9,9 +9,8 @@ const Test = () => {
         </button>
       </div>
       <input
-        // style={{  width:60 !important }}
         type="text"
-        className="form-control "
+        className="form-control"
         placeholder="what are you looking for ?"
         aria-label=""
         aria-describedby="basic-addon1"

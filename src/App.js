@@ -8,11 +8,14 @@ import VideoDetail from "./component/video-detail";
 const API_KEY = "AIzaSyAnPMlXfqjcbrcOiQ2dyQVTMuYL_hn5gCU";
 
 class App extends Component {
-  state = { videos: [] };
+  state = {
+    videos: [],
+    selectedVideo: null
+  };
 
   componentDidMount() {
     YTsearch({ key: API_KEY, term: "ladygaga" }, videos =>
-      this.setState({ videos })
+      this.setState({ videos: videos, selectedVideo: videos[0] })
     );
   }
 
@@ -21,8 +24,11 @@ class App extends Component {
       <Fragment>
         <Test />
         <SearchBar />
-        <VideoDetail video={this.state.videos[0]} />
-        <VideoList videos={this.state.videos} />
+        <VideoDetail video={this.state.selectedVideo} />
+        <VideoList
+          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+          videos={this.state.videos}
+        />
       </Fragment>
     );
   }
